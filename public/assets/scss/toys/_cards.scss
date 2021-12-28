@@ -1,0 +1,59 @@
+@import "./card";
+
+.cards {
+  margin: 0 5px;
+  padding: 7px;
+  max-width: 1240px;
+  width: 100%;
+  min-height: 100vh;
+
+  &__header {
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5px auto;
+    position: relative;
+
+    &-title {
+      font-size: 42px;
+      font-weight: 400;
+      color: $color-primary;
+      font-family: "Neucha", sans-serif;
+    }
+
+    &-bookmark {
+      position: fixed;
+      top: 20px;
+      right: 25px;
+      z-index: 5;
+
+      @media (max-width: 1279px) {
+        right: 20px;
+      }
+    }
+  }
+
+  .bookmark__count {
+    position: absolute;
+    top: -8px;
+    right: 0;
+    color: $color-third;
+    font-size: 24px;
+    font-weight: 800;
+    z-index: 2;
+    padding-left: 5px;
+    background: rgba(22, 41, 41, 1);
+    font-weight: 100;
+  }
+
+  &__container {
+    max-width: 100%;
+    width: 100%;
+    padding: 5px;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 2%;
+  }
+}

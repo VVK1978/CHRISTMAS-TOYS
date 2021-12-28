@@ -1,0 +1,29 @@
+@import "./gameSettings";
+@import "./gameTree";
+@import "./gameFavorite";
+
+.game {
+  display: flex;
+  justify-content: space-between;
+  align-content: flex-start;
+  width: 100%;
+  min-height: 800px;
+  padding: 10px 10px;
+  background: $bg-dark-secondary;
+
+  @media (max-width: 1279px) {
+    flex-direction: column;
+    align-items: center;
+    max-height: 1170px;
+  }
+}
+
+.app > .wrapper {
+  max-width: 1600px;
+}
+
+.settings__title {
+  color: $color-primary;
+  font-size: 20px;
+  margin: 10px;
+}

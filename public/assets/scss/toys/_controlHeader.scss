@@ -1,0 +1,73 @@
+@import "./search";
+
+.play,
+.mute,
+.snow,
+.reset {
+  width: 36px;
+  height: 36px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: 0.4s ease-in-out;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.play:hover,
+.mute:hover,
+.snow:hover,
+.reset:hover {
+  opacity: 1;
+}
+
+.play:hover,
+.mute:hover {
+  transform: scale(1.1);
+}
+
+.snow:hover {
+  transform: rotateZ(180deg);
+}
+
+.reset:hover {
+  transform: rotateZ(-90deg);
+}
+
+.play {
+  background-image: url("../images/svg/audio.svg");
+}
+
+.mute {
+  background-image: url("../images/svg/mute.svg");
+}
+
+.snow {
+  background-image: url("../images/svg/snow.svg");
+}
+
+.snow.active {
+  filter: $filter-color;
+}
+
+.reset {
+  background-image: url("../images/svg/reset.svg");
+}
+
+.snowflakes {
+  visibility: visible;
+}
+
+.fa-snowflake {
+  color: $color-primary;
+  position: absolute;
+  top: -20px;
+  animation: fall linear forwards;
+  z-index: 999;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(120vh);
+  }
+}

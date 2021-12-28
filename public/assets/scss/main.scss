@@ -1,0 +1,147 @@
+@import "./main/header.scss";
+
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../images/bg.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: calc(100vh - 115px);
+  color: $color-primary;
+  position: relative;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: $wrapper-large;
+  width: 100%;
+
+  @media (max-width: 1279px) {
+    max-width: $wrapper-middle;
+  }
+}
+
+.main__page {
+  width: 100%;
+  min-height: calc(100vh - 115px);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  gap: 50px;
+
+  &-title {
+    font-size: 48px;
+    width: 600px;
+    height: 250px;
+    padding: 50px 15px;
+    border: 3px solid $bg-main;
+    border-radius: 20px;
+    background-color: $bg-dark-primary-opacity;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+  }
+}
+
+.button__start {
+  color: $color-primary;
+  font-size: 48px;
+  border: $bg-main 4px solid;
+  background-color: $bg-dark-primary-opacity;
+  position: relative;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: 0.5s ease-in-out;
+}
+
+.button__start:hover {
+  color: $bg-main;
+  background-color: $bg-light;
+}
+
+.ball {
+  position: absolute;
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  top: 115px;
+}
+
+.ball__image {
+  &-big {
+    width: 500px;
+    height: 500px;
+    top: 215px;
+    left: calc(50% - 650px);
+    animation: anime-big 10s ease-in-out infinite;
+    background-image: url("../images/ball/1.png");
+
+    @media (max-width: 1279px) {
+      left: calc(50% - 550px);
+    }
+  }
+
+  &-big::before {
+    content: "";
+    position: absolute;
+    top: -315px;
+    left: 250px;
+    width: 5px;
+    height: 320px;
+    background-color: #aaa;
+  }
+
+  &-small {
+    width: 300px;
+    height: 300px;
+    left: calc(50% + 275px);
+    background-image: url("../images/ball/2.png");
+    animation: anime-small 10s ease-in-out infinite;
+
+    @media (max-width: 1279px) {
+      left: calc(50% + 80px);
+    }
+  }
+
+  &-small::before {
+    content: "";
+    position: absolute;
+    top: -225px;
+    left: 147px;
+    width: 5px;
+    height: 230px;
+    background-color: #aaa;
+  }
+}
+
+@keyframes anime-big {
+  0% {
+    transform: translateY(100px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(100px);
+  }
+}
+
+@keyframes anime-small {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(100px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

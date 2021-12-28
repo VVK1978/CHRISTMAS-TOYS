@@ -1,0 +1,30 @@
+@import "./settingsTree";
+@import "./settingsBg";
+@import "./settingsGarland";
+
+.game {
+  &__settings {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: space-between;
+    min-height: 780px;
+    width: 400px;
+    padding: 5px 5px;
+
+    @media (max-width: 1440px) {
+      align-items: initial;
+      align-content: initial;
+      min-height: 650px;
+      gap: 1vh;
+    }
+
+    @media (max-width: 1279px) {
+      padding: 10px 10px;
+      flex-direction: row;
+      width: 100%;
+      min-height: 390px;
+      justify-content: space-around;
+    }
+  }
+}

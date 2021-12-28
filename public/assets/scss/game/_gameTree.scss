@@ -1,0 +1,180 @@
+.game__tree {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background-size: cover;
+  background-position: center;
+  min-height: 750px;
+  width: 800px;
+  padding-bottom: 20px;
+  overflow: hidden;
+  background-image: url("../images/bg/1.jpg");
+  transition: 0.8s ease-in-out;
+
+  @media (max-width: 1279px) {
+    width: calc(100vw - 40px);
+  }
+}
+
+.main__tree {
+  position: relative;
+}
+
+.main__tree.close {
+  animation: anime 0.75s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes anime {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.garland__tree-container {
+  display: flex;
+  justify-content: center;
+  height: 780px;
+  width: 700px;
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  margin-left: -355px;
+  pointer-events: none;
+  z-index: 9;
+  overflow: hidden;
+
+  @media (max-width: 1279px) {
+    top: 10px;
+  }
+}
+
+.tree__container {
+  width: 500px;
+  position: relative;
+}
+
+.lightrope {
+  white-space: nowrap;
+  overflow: hidden;
+  position: absolute;
+  z-index: 1;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+  border-radius: 50%;
+  padding: 0;
+  list-style: none;
+  width: 650px;
+  height: 750px;
+}
+
+.lightrope li:nth-child(1n + 1).multicolor {
+  animation-name: red;
+}
+
+.lightrope li:nth-child(2n + 2).multicolor {
+  animation-name: green;
+}
+
+.lightrope li:nth-child(3n + 3).multicolor {
+  animation-name: blue;
+}
+
+.lightrope li:nth-child(4n + 4).multicolor {
+  animation-name: yellow-color;
+}
+
+.lightrope li:nth-child(3n + 1) {
+  animation-duration: 1.4s;
+}
+
+.lightrope li:nth-child(2n + 1) {
+  animation-duration: 1.8s;
+}
+
+.lightrope li.red {
+  animation-name: red;
+}
+
+.lightrope li.blue {
+  animation-name: blue;
+}
+
+.lightrope li.yellow {
+  animation-name: yellow-color;
+}
+
+.lightrope li.green {
+  animation-name: green;
+}
+
+.lightrope li {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 6px;
+  height: 12px;
+  border-radius: 50%;
+  margin-top: -365px;
+  animation-name: red;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  animation-duration: 2s;
+}
+
+@keyframes red {
+  0%,
+  100% {
+    background: rgba(247, 0, 118, 1);
+    box-shadow: 0px 2px 12px 2px rgb(247 0 118);
+  }
+
+  50% {
+    background: rgba(247, 0, 118, 0.4);
+    box-shadow: 0px 2px 12px 2px rgb(247 0 118 / 10%);
+  }
+}
+
+@keyframes green {
+  0%,
+  100% {
+    background: rgba(0, 247, 165, 1);
+    box-shadow: 0px 2px 12px 2px rgb(0 247 165);
+  }
+  50% {
+    background: rgba(0, 247, 165, 0.4);
+    box-shadow: 0px 2px 12px 2px rgb(0 247 165 / 10%);
+  }
+}
+
+@keyframes blue {
+  0%,
+  100% {
+    background: rgb(0, 119, 255);
+    box-shadow: 0px 2px 12px 2px rgb(0 255 255);
+  }
+  50% {
+    background: rgba(0, 255, 255, 0.4);
+    box-shadow: 0px 2px 12px 2px rgb(0 255 255 / 10%);
+  }
+}
+
+@keyframes yellow-color {
+  0%,
+  100% {
+    background: rgba(255, 255, 0, 1);
+    box-shadow: 0px 2px 12px 2px rgb(255 255 0);
+  }
+  50% {
+    background: rgba(255, 255, 0, 0.4);
+    box-shadow: 0px 2px 12px 2px rgb(255 255 0 / 10%);
+  }
+}

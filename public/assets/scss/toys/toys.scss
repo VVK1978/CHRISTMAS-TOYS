@@ -1,0 +1,17 @@
+@import "./controls";
+@import "./cards";
+@import "./modal";
+
+.toys {
+  margin: 0 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  background: $bg-dark-secondary;
+
+  @media (max-width: 1279px) {
+    flex-direction: column;
+  }
+}

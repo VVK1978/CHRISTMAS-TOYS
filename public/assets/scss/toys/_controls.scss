@@ -1,0 +1,132 @@
+@import "./controlHeader";
+@import "./filterByValue";
+@import "./filterByRange";
+@import "./filterBySort";
+
+.controls {
+  margin: 0 5px;
+  padding: 5px;
+  max-width: 430px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+
+  @media (max-width: 1279px) {
+    flex-direction: row;
+    max-width: 100%;
+  }
+
+  &__body {
+    position: fixed;
+    max-width: 430px;
+    width: 100%;
+    top: 80px;
+    transition: 0.5s ease-in-out;
+
+    @media (max-width: 1279px) {
+      position: relative;
+      max-width: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      top: 5px;
+    }
+  }
+}
+
+.control__header {
+  max-width: 60%;
+  width: 100%;
+  height: 48px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+
+  @media (max-width: 1279px) {
+    min-height: 100px;
+    height: initial;
+    max-width: 11%;
+    border-radius: 10px;
+    margin-bottom: 0;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: $bg-dark-primary-opacity;
+  }
+
+  &-sound,
+  &-snow {
+    width: 36px;
+    height: 36px;
+    transition: 0.25s ease-in-out;
+  }
+
+  &-sound:hover,
+  &-snow:hover {
+    opacity: 1;
+  }
+}
+
+.filters__container {
+  padding: 5px;
+  max-width: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @media (max-width: 1279px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: baseline;
+  }
+}
+
+.filters {
+  &__value,
+  &__range,
+  &__sort {
+    max-width: 100%;
+    width: 100%;
+    height: 220px;
+    padding: 5px 24px;
+    border-radius: 10px;
+    background-color: $bg-dark-primary-opacity;
+    color: $color-primary;
+    font-size: 20px;
+
+    @media (max-width: 1279px) {
+      max-width: 49%;
+      padding: 6px 12px;
+    }
+  }
+
+  &__sort {
+    height: 120px;
+
+    @media (max-width: 1279px) {
+      max-width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}
+
+.filters__range {
+  margin: 12px 0;
+}
+
+.filter__title,
+.title {
+  height: 35px;
+  padding-top: 5px;
+
+  @media (max-width: 1279px) {
+    padding-top: 10px;
+  }
+}

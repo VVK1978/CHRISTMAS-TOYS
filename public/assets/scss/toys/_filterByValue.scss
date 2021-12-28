@@ -1,0 +1,166 @@
+.button__shape.active,
+.button__color.active {
+  position: relative;
+}
+
+.button__color.active::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  content: "V";
+  font-weight: 800;
+  transform: translate(-50%, -50%);
+}
+
+.button__shape.active,
+.button__size.active {
+  filter: $filter-color;
+}
+
+.value {
+  &__shape,
+  &__color,
+  &__size,
+  &__favorite {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 45px;
+    font-size: 16px;
+    font-weight: 100;
+
+    & button {
+      background-color: transparent;
+      background-repeat: no-repeat;
+      background-size: contain;
+      cursor: pointer;
+    }
+
+    & .button__shape {
+      width: 28px;
+      height: 28px;
+      margin: 0 14px;
+      transition: 0.3s ease-in-out;
+    }
+
+    & .button__shape:hover,
+    & .button__size:hover {
+      opacity: 0.5;
+      transform: scale(1.15);
+    }
+
+    & .button__shape:nth-child(1) {
+      background-image: url("../images/svg/ball.svg");
+    }
+    & .button__shape:nth-child(2) {
+      background-image: url("../images/svg/bell.svg");
+    }
+    & .button__shape:nth-child(3) {
+      background-image: url("../images/svg/cone.svg");
+    }
+    & .button__shape:nth-child(4) {
+      background-image: url("../images/svg/snowflake.svg");
+    }
+    & .button__shape:nth-child(5) {
+      background-image: url("../images/svg/toy.svg");
+    }
+
+    & .button__color {
+      width: 24px;
+      height: 24px;
+      margin: 0 12px;
+    }
+
+    & .button__color:nth-child(1) {
+      background-color: $color-primary;
+    }
+    & .button__color:nth-child(2) {
+      background-color: $color-secondary;
+    }
+    & .button__color:nth-child(3) {
+      background-color: $color-third;
+    }
+    & .button__color:nth-child(4) {
+      background-color: $color-fours;
+    }
+    & .button__color:nth-child(5) {
+      background-color: $color-fifth;
+    }
+
+    & .button__size {
+      background-image: url("../images/svg/ball.svg");
+      margin: 0 17px;
+      transition: 0.3s ease-in-out;
+    }
+
+    & .button__size:nth-child(1) {
+      width: 40px;
+      height: 40px;
+    }
+
+    & .button__size:nth-child(2) {
+      width: 32px;
+      height: 32px;
+    }
+
+    & .button__size:nth-child(3) {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
+
+.form__favorite {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  margin-left: 20px;
+  border-radius: 5px;
+  transition: 0.25s ease-in-out;
+}
+
+.input__favorite {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 1;
+
+  &-label {
+    display: flex;
+    width: 30px;
+    height: 30px;
+    backdrop-filter: blur(6px);
+    border: 1px solid $bg-main;
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+  }
+}
+
+.form__favorite:hover {
+  box-shadow: $color-active-shadow-1;
+}
+
+.input__favorite:checked {
+  & + .input__favorite-label {
+    background-color: $bg-main;
+    border-color: $bg-main;
+  }
+
+  & + .input__favorite-label::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 5px;
+    left: 9px;
+    width: 9px;
+    height: 16px;
+    border: solid $color-primary;
+    border-width: 0 4px 4px 0;
+    transform: rotate(45deg);
+  }
+}
